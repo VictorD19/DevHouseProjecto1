@@ -1,6 +1,6 @@
 //  Recuperando Lista
 const _listToDo = JSON.parse(localStorage.getItem('List_Todo')) || [];
-const _showItemContent = document.querySelector(".cardContent")
+const _showItemContent = document.querySelector(".listTarefas")
 const cardForm = document.querySelector(".cardForm")
 
 
@@ -37,7 +37,6 @@ formList.addEventListener('submit', (event) => {
         case '8':
         case '9':
         case '0':
-            console.log("Digite Um Id Valido");
 
             _alert.style = "background: #d12438; display: block;"
             _alert.innerHTML = `<i class="fas fa-exclamation-circle"></i> Digite um nome valido`
@@ -83,14 +82,26 @@ function ShowItemList(clearList = false) {
 
     // Adiciona os item na lista
     _listToDo.forEach(item => {
-        _showItemContent.innerHTML += `<div  class="cardItem">
-                 <input type="checkbox" name="itemList" id="${item.name}"/> 
-                 <label for="${item.name}"> ${item.name} </label>
+        if (item.state == false) {
+            _showItemContent.innerHTML += `<div  class="cardItem"  >
+                 <input type="checkbox" name="itemList" id="${item.name}" onclick="changeText('${item.name}','t${item.name}')"/> 
+                 <label for="${item.name}"  id="t${item.name}"> ${item.name} </label>
                  <button onClick="deleteItem('${item.name}')">
                     <i class="fas fa-trash-alt"></i>
                  </button>
 
                  </div>`
+        } else {
+            _showItemContent.innerHTML += `<div  class="cardItem"  >
+                 <input type="checkbox" name="itemList" id="${item.name}" checked onclick="changeText('${item.name}','t${item.name}')"/> 
+                 <label for="${item.name}"  id="t${item.name}" style="text-decoration: line-through;'"> ${item.name} </label>
+                 <button onClick="deleteItem('${item.name}')">
+                    <i class="fas fa-trash-alt"></i>
+                 </button>
+
+                 </div>`
+
+        }
     });
 
 }
@@ -125,6 +136,27 @@ function createTask() {
     cardForm.style = "display: flex; "
 }
 
+function changeText(id, idText) {
+    const _state = document.querySelector(`#${id}`)
+    const _textItem = document.querySelector(`#${idText}`)
 
+    for (let i = 0; i < _listToDo.length; i++) {
+        if (_listToDo[i].name == id) {
+            if (_state.checked) {
+                _textItem.style = 'text-decoration: line-through;'
+                _listToDo[i].state = true
+                saveList()
+            } else {
+                _textItem.style = 'text-decoration: none;'
+                _listToDo[i].state = false
+                saveList()
+            }
+
+
+
+        }
+
+    }
+}
 
 window.onload = ShowItemList()

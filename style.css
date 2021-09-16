@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 body {
@@ -59,7 +60,7 @@ main {
     position: absolute;
     background: #3c3b6eb6;
     border-radius: 20px;
-    margin-top: 20px;
+    margin-top: 60px;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     color: #fff;
@@ -120,4 +121,71 @@ main {
     border-radius: 5px;
     font-size: 11px;
     display: none;
+}
+
+.cardContent {
+    text-align: center;
+    width: 100%;
+}
+
+.cardContent>h1 {
+    position: relative;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.cardContent>h1::before {
+    content: "";
+    position: absolute;
+    width: 310px;
+    border-top: 2px dashed #3c3b6eb6;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.cardItem {
+    width: 290px;
+    height: 40px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin: 0 auto 10px;
+    background: #eeeeeede;
+    color: #1b1a1a;
+    text-decoration: none;
+    transition: 0.5s ease;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.cardItem:hover {
+    width: 300px;
+}
+
+.cardItem>input {
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.cardItem>button {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    font-size: 17px;
+    background: #e20721;
+    border-radius: 50%;
+    color: #e2e2e2;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+
+.cardItem>button:hover {
+    background: #9b0c1d;
 }
