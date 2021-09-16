@@ -116,16 +116,33 @@ function ShowItemList(clearList = false) {
 
 // elimina item da lista 
 function deleteItem(id) {
+    const _alert = document.querySelector(".alertDelete")
+    const _confirmDelete = document.querySelector("#confirm")
+    const _closeAlert = document.querySelector("#close")
+    _alert.style = 'display:flex;'
 
-    for (let i = 0; i < _listToDo.length; i++) {
-        if (_listToDo[i].name == id) {
-            const index = _listToDo.indexOf(_listToDo[i])
-            _listToDo.splice(index, 1)
-            ShowItemList(true)
-            saveList()
+    _confirmDelete.onclick = () => {
+        for (let i = 0; i < _listToDo.length; i++) {
+            if (_listToDo[i].name == id) {
+                const index = _listToDo.indexOf(_listToDo[i])
+                _listToDo.splice(index, 1)
+                ShowItemList(true)
+                saveList()
+                _alert.style = 'display:none;'
+
+            }
+
         }
+    }
+    _closeAlert.onclick = () => {
+        _alert.style = 'display:none;'
 
     }
+
+    console.log(_confirmDelete);
+    console.log(_closeAlert);
+
+
 }
 
 // salva a lista no localStorage

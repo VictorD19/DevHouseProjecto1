@@ -45,10 +45,6 @@ header>button:hover {
     background: #d82136;
 }
 
-main {
-    position: relative;
-}
-
 .cardForm {
     width: 300px;
     height: 30vh;
@@ -126,6 +122,7 @@ main {
 .cardContent {
     text-align: center;
     width: 100%;
+    position: relative;
 }
 
 .cardContent>h1 {
@@ -187,4 +184,65 @@ main {
 
 .cardItem>button:hover {
     background: #9b0c1d;
+}
+
+.alertDelete {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-weight: 300;
+    margin: auto;
+    padding: 10px;
+    background: #B22234;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.alertDelete>p {
+    font-size: 15px;
+}
+
+.alertDelete>div {
+    margin-top: 5px;
+}
+
+.alertDelete>div>button {
+    padding: 8px;
+    width: 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-right: 5px;
+    transition: 0.5s ease;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.alertDelete>div>button:last-child {
+    background: #f10621;
+}
+
+.alertDelete>div>button:last-child:hover {
+    width: 60px;
+    background: #af071b;
+    letter-spacing: 00.5px;
+    font-weight: bold;
+}
+
+.alertDelete>div>button:first-child {
+    background: #4faa0e;
+}
+
+.alertDelete>div>button:first-child:hover {
+    background: #4faa0e;
+    width: 60px;
+    letter-spacing: 00.5px;
+    font-weight: bold;
 }

@@ -18,23 +18,31 @@
         createTask()">Criar Tarefa</button>
     </header>
     <main>
-        <div class="cardForm">
-            <h1>Nova Tarefa</h1>
-            <form action="index.html" method="POST" id="formList">
-                <input type="text" id="tarefa" placeholder="Nome da tarefa"> <br>
-                <p class="alert"></p>
-                <div>
-                    <button id="add"><i class="fas fa-plus-circle"></i> Adicionar</button>
-                    <button id="hidden"><i class="fas fa-plus-circle "></i> Fechar</button>
-                </div>
-            </form>
-        </div>
+
         <div class="cardContent">
+            <div class="cardForm">
+                <h1>Nova Tarefa</h1>
+                <form action="index.html" method="POST" id="formList">
+                    <input type="text" id="tarefa" placeholder="Nome da tarefa"> <br>
+                    <p class="alert"></p>
+                    <div>
+                        <button id="add"><i class="fas fa-plus-circle"></i> Adicionar</button>
+                        <button id="hidden"><i class="fas fa-plus-circle "></i> Fechar</button>
+                    </div>
+                </form>
+            </div>
             <h1>Lista de tarefas</h1>
             <div class="listTarefas">
 
 
 
+            </div>
+            <div class="alertDelete">
+                <p>Deseja realmente eliminar esta tarefa?</p>
+                <div>
+                    <button id="confirm">Sim</button>
+                    <button id="close">Não</button>
+                </div>
             </div>
             <!-- <div class="cardItem">
                 <input type="checkbox" id="itemTodo">
