@@ -5,27 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="src/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/5fac7dabe4.js" crossorigin="anonymous"></script>
-    <title>Home To-do</title>
+    <title>List To-do</title>
 </head>
 
 <body>
     <header>
         <a href="/"><i class="fas fa-list"></i> To-do List</a>
         <button onclick="
-        createTask()">Criar Afazer</button>
+        createTask()">Criar Tarefa</button>
     </header>
     <main>
         <div class="cardForm">
-            <h1>Criar Tarefa</h1>
+            <h1>Nova Tarefa</h1>
             <form action="index.html" method="POST" id="formList">
-                <label for="tarefa">Insira tarefa</label> <br>
-                <input type="text" id="tarefa"> <br>
+                <input type="text" id="tarefa" placeholder="Nome da tarefa"> <br>
                 <p class="alert"></p>
                 <div>
-                    <button type="submit" id="add"><i class="fas fa-plus-circle"></i> Adicionar</button>
-                    <button type="submit" id="hidden"><i class="fas fa-plus-circle "></i> Fechar</button>
+                    <button id="add"><i class="fas fa-plus-circle"></i> Adicionar</button>
+                    <button id="hidden"><i class="fas fa-plus-circle "></i> Fechar</button>
                 </div>
             </form>
         </div>
