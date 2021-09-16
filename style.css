@@ -8,3 +8,116 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
+
+header {
+    width: 100%;
+    height: 50px;
+    background: #B22234;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+header>a {
+    text-decoration: none;
+    color: #f3f3f3;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+header>button {
+    padding: 08px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    background: #e73045;
+    transition: 0.5s ease;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+header>button:hover {
+    letter-spacing: 0.5px;
+    background: #d82136;
+}
+
+main {
+    position: relative;
+}
+
+.cardForm {
+    width: 300px;
+    height: 30vh;
+    padding: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: 1s ease;
+    position: absolute;
+    background: #3c3b6eb6;
+    border-radius: 20px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: #fff;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cardForm>h1 {
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+
+#formList>input {
+    width: 210px;
+    height: 30px;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#formList>div {
+    margin-top: 10px;
+}
+
+#formList>div>button {
+    border: none;
+    padding: 8px;
+    color: #fff;
+    background: #4faa0e;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+    transition: .5s all;
+}
+
+#formList>div>button:hover {
+    background: #58be0e;
+    letter-spacing: 00.5px;
+}
+
+#formList>div>#hidden {
+    background: #B22234;
+}
+
+#formList>div>#hidden:hover {
+    background: #d12438;
+    letter-spacing: 00.5px;
+}
+
+.alert {
+    color: #fff;
+    margin-top: 10px;
+    padding: 3px 0;
+    border-radius: 5px;
+    font-size: 11px;
+    display: none;
+}

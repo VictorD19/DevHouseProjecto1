@@ -1,6 +1,8 @@
 //  Recuperando Lista
 const _listToDo = JSON.parse(localStorage.getItem('List_Todo')) || [];
 const _showItemContent = document.querySelector(".cardContent")
+const cardForm = document.querySelector(".cardForm")
+
 
 // Selecionando Formulario
 const formList = document.querySelector("#formList")
@@ -22,6 +24,7 @@ formList.addEventListener('submit', (event) => {
 
     //Recuperando valor del input
     const _assignment = document.querySelector("#tarefa").value
+    const _alert = document.querySelector(".alert")
     switch (_assignment[0]) {
         case undefined:
         case '1':
@@ -35,11 +38,25 @@ formList.addEventListener('submit', (event) => {
         case '9':
         case '0':
             console.log("Digite Um Id Valido");
+
+            _alert.style = "background: #d12438; display: block;"
+            _alert.innerHTML = `<i class="fas fa-exclamation-circle"></i> Digite um nome valido`
             break;
 
         default:
-            createItem(_assignment)
-            ShowItemList(true)
+
+            if (event.submitter.id == 'add') {
+                createItem(_assignment)
+                ShowItemList(true)
+                formList.reset()
+
+
+                _alert.style = "background: #4faa0e; display: block;"
+                _alert.innerHTML = `<i class="fas fa-check-circle"></i> Adicionada com sucesso`
+
+
+            }
+
 
             break;
     }
@@ -47,7 +64,12 @@ formList.addEventListener('submit', (event) => {
     //  verificar se o valor nao esta vazio e nao começa com numero
 
 
+    if (event.submitter.id == 'hidden') {
+        cardForm.style = "display: none; "
+        _alert.style = "display: none;"
 
+        formList.reset()
+    }
 
 })
 
@@ -78,7 +100,7 @@ function deleteItem(id) {
 
     for (let i = 0; i < _listToDo.length; i++) {
 
-        // 
+
         if (_listToDo[i].name == id) {
 
             const index = _listToDo.indexOf(_listToDo[i])
@@ -96,5 +118,13 @@ function saveList() {
     localStorage.setItem('List_Todo', JSON.stringify(_listToDo))
 
 }
+
+
+function createTask() {
+
+    cardForm.style = "display: flex; "
+}
+
+
 
 window.onload = ShowItemList()
