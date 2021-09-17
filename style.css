@@ -86,7 +86,7 @@ header>button:hover {
     margin-top: 10px;
 }
 
-#formList>div>button {
+div>button {
     border: none;
     padding: 8px;
     color: #fff;
@@ -98,16 +98,16 @@ header>button:hover {
     outline: none;
 }
 
-#formList>div>button:hover {
+div>button:hover {
     background: #58be0e;
     letter-spacing: 00.5px;
 }
 
-#formList>div>#hidden {
+div>#hidden {
     background: #B22234;
 }
 
-#formList>div>#hidden:hover {
+div>#hidden:hover {
     background: #d12438;
     letter-spacing: 00.5px;
 }
@@ -218,7 +218,7 @@ header>button:hover {
 
 .alertDelete>div>button {
     padding: 8px;
-    width: 50px;
+    width: 60px;
     border: none;
     outline: none;
     cursor: pointer;
@@ -234,7 +234,7 @@ header>button:hover {
 }
 
 .alertDelete>div>button:last-child:hover {
-    width: 60px;
+    width: 70px;
     background: #af071b;
     letter-spacing: 00.5px;
     font-weight: bold;
@@ -245,8 +245,8 @@ header>button:hover {
 }
 
 .alertDelete>div>button:first-child:hover {
-    background: #4faa0e;
-    width: 60px;
+    background: #397c09;
+    width: 70px;
     letter-spacing: 00.5px;
     font-weight: bold;
 }

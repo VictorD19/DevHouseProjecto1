@@ -139,8 +139,6 @@ function deleteItem(id) {
 
     }
 
-    console.log(_confirmDelete);
-    console.log(_closeAlert);
 
 
 }
